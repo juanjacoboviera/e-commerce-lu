@@ -29,7 +29,7 @@ class Productos {
 
 //Productos 
 
-const tortaYogurtyArandanos = new Productos ("Torta Yogurt & Arandanos", "Torta", "800", "31000", "0", "La versatilidad del yogurt griego y los arándanos permite alternar distintos sabores para lograr una combinación deliciosa.")
+const tortaYogurtyArandanos = new Productos ("Torta Yogurt & Arandanos", "Torta", "800", "31000", "10", "La versatilidad del yogurt griego y los arándanos permite alternar distintos sabores para lograr una combinación deliciosa.")
 
-console.log(tortaYogurtyArandanos.vender(0))
+console.log(tortaYogurtyArandanos.vender(3))
 

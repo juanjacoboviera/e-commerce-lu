@@ -28,11 +28,15 @@
                     <a href="#">Contacto</a>
                 </li>
                 <li>
-                    <a href="#">Carrito</a>
+                    <a href="#"
+                    i class="fa-solid fa-bag-shopping"></i>
+                    </a>
                 </li>
             </ul>
-            <div class="cart">
-                <h2 class="cart__title">Tu canasta</h2>
+           
+        </nav>
+        <nav class="cart">
+            <h2 class="cart__title">Tu canasta</h2>
                 <div class="producto">
                     <div class="producto__imagen">
                     <img src="./images/Torta.jpg" height="100px;" width="autopx" alt="Torta de fresa">
@@ -42,7 +46,8 @@
                         <p class="producto__precio">$13.500</p>
                         <input type="number" min="0" class="producto__cantidad">
                     </div>
-                    <i class="fa-regular fa-trash-can producto__eliminar"></i>
+                    <a href="#" class="producto__eliminar trashIconSize">
+                        <i class="fa-regular fa-trash-can "></i></a>
                 </div>
                 <div class="producto">
                     <div class="producto__imagen">
@@ -53,25 +58,25 @@
                         <p class="producto__precio">$13.500</p>
                         <input type="number" min="0" class="producto__cantidad">
                     </div>
-                    <i class="fa-regular fa-trash-can producto__eliminar"></i>
+                    <a href="#" class="producto__eliminar trashIconSize">
+                        <i class="fa-regular fa-trash-can "></i></a>
                 </div>
                 <div class="total">
                     <div class="total__title">Total</div>
                     <div class="total__price">$0</div>
                 </div>
                 <button type="button" class="btn__buy">Comprar</button>
-                <a href="#">
-                    <i class="fa-solid fa-x cart__close"></i>
+                <a href="#" class="cart__close">
+                    <i class="fa-solid fa-x"></i>
                 </a>
-
-            </div>
-        
+            
         </nav>
+       
+    </header>
+    <main>
         <section class="banner-principal">
             <h1> Saborea el<br> momento con<br> un premio</h1>
         </section>
-    </header>
-    <main>
         <section class="categorias">
             <div class="container__search">
                 <i class="fa-solid fa-magnifying-glass container__searchIcon"></i>

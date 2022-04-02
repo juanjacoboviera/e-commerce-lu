@@ -15,15 +15,21 @@ body {
 /* Header */
 
 nav {
+  position: fixed;
+  background-color: #fff;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  width: 100vw;
+  z-index: 2;
+  border-bottom: solid 1px rgb(230, 230, 230);
 }
 
 nav ul {
   display: flex;
   list-style: none;
+  align-items: center;
 }
 
 nav ul li {
@@ -63,10 +69,11 @@ nav a {
   right: 0;
   width: 360px;
   min-height: 100vh;
-  padding: 20px;
+  padding: 100px 20px 20px 20px;
   background-color: #fff;
   box-shadow: 0px 5px 10px 0px rgb(0 0 0 / 15%);
-  z-index: 2;
+  z-index: 1;
+  display: block;
 }
 
 .cart__title {
@@ -78,7 +85,7 @@ nav a {
 
 .cart__close{
   position: absolute;
-  top: 1.5rem;
+  top: 6rem;
   right: 0.8rem;
   font-size: 1.2rem;
   color: black;
@@ -131,6 +138,12 @@ nav a {
   cursor: pointer;
 }
 
+.trashIconSize{
+  padding-top: 0;
+  width: 20px;
+  height: 20px;
+}
+
 .total {
   display: flex;
   justify-content: flex-end;
@@ -165,6 +178,12 @@ font-size: 0.8rem;
 footer {
   background-color: #ebe6ff;
   height: 100px;
+}
+
+/* Main */
+
+main{
+  padding-top: 90px;
 }
 
 /* Bloque de filtros */

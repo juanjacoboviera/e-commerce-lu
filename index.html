@@ -15,7 +15,7 @@
     <header>
         <nav>
           <a href="#">
-            <img src="./images/LOGO LU.svg" height="65px;" width="65px" alt="Lu Postres+Tortas"> 
+            <img src="./images/LOGO LUW.svg" height="65px;" width="65px" alt="Lu Postres+Tortas"> 
           </a>
           <ul>
                 <li>
@@ -35,6 +35,11 @@
             </ul>
            
         </nav>
+        <section class="banner-principal">
+
+            <h1> Saborea el momento<br> con un premio</h1>
+        </section>
+  <!--
         <nav class="cart">
             <h2 class="cart__title">Tu canasta</h2>
                 <div class="producto">
@@ -71,16 +76,26 @@
                 </a>
             
         </nav>
-       
+      -->
     </header>
     <main>
-        <section class="banner-principal">
-            <h1> Saborea el<br> momento con<br> un premio</h1>
-        </section>
         <section class="categorias">
-            <div class="container__search">
-                <i class="fa-solid fa-magnifying-glass container__searchIcon"></i>
-                <input type="text">
+            <div class="categorias__filtros">
+                <div class="container">
+                    <i class="fa-solid fa-magnifying-glass container__searchIcon"></i>
+                    <input class="container__search" type="text">
+                </div>
+                <div class="container__desplegable">
+                    <select name="filtros" id="filtros">
+                        <option value="destacados">Destacados</option>
+                        <option value="precio menos a mayor">Precio menor a mayor</option>
+                        <option value="precio mayor a menor">Precio mayor a menor</option>
+                        <option value="ordenar a-z">Ordenar A-Z</option>
+                        <option value="ordenar z-a">Ordenar Z-A</option>
+                    </select>
+                 </div>
+
+
             </div>
             <h2 class="categoria__titulo categoria__border">Postres</h2>
                 <section class="categoria__grid">

@@ -41,7 +41,7 @@ nav a {
   flex-direction: row;
   justify-content: right;
   align-items: center;
-  background-image: url(/images/img1.jpg);
+  background-image: url(/images/banner2.jpg);
   height: 50vh;
   width: 100%;
   background-repeat: no-repeat;
@@ -50,17 +50,149 @@ nav a {
 }
 
 .banner-principal h1 {
-  color: #a95512;
-  font-weight: 200;
+  color: #fff;
+  font-weight: 400;
   font-size: 2.5rem;
   margin-right: 100px;
+}
+
+/* Cart */
+.cart {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 360px;
+  min-height: 100vh;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0px 5px 10px 0px rgb(0 0 0 / 15%);
+  z-index: 2;
+}
+
+.cart__title {
+  text-align: left;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 50px;
+}
+
+.cart__close{
+  position: absolute;
+  top: 1.5rem;
+  right: 0.8rem;
+  font-size: 1.2rem;
+  color: black;
+
+}
+
+.producto {
+  display: grid;
+  grid-template-columns: 40% 40% 20%;
+  gap: 5px;
+  margin: 15px 0px;
+  padding-bottom: 20px;
+  border-bottom: solid 1px rgb(230, 230, 230);
+}
+
+.producto__imagen{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.producto__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.producto__nombre {
+  font-size: 0.8rem;
+}
+
+.producto__precio {
+  font-size: 0.8rem;
+}
+
+.producto__cantidad{
+  width: 50px;
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid #dcdcdc;
+  padding: 14px 45 px;
+  font-size: 16px;
+  outline: none;
+}
+
+.producto__eliminar {
+  color: rgb(191, 57, 57);
+  cursor: pointer;
+}
+
+.total {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.total__title{
+font-weight: 600;
+font-size: 0.8rem;
+text-transform: uppercase;
+}
+
+.total__price{
+font-weight: 400;
+font-size: 0.8rem;
+}
+
+.btn__buy {
+  display: flex;
+  margin: 1.5rem auto 0 auto;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 3px;
+  background-color: #a93012;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
 }
 
 /* Footer */
 
 footer {
-  background-color: #a95512;
+  background-color: #ebe6ff;
   height: 100px;
+}
+
+/* Bloque de filtros */
+
+.container__search {
+  position: relative;
+}
+
+.container__searchIcon{
+  position: relative;
+  top: 0px;
+  left: 30px;
+}
+
+.container__search input {
+  margin: 20px 0 30px 0;
+  width: 400px;
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid #dcdcdc;
+  padding: 5px 45px;
+  font-size: 16px;
+  outline: none;
+}
+
+.container__search input:hover {
+  border: 1px solid #fff;
+  box-shadow: 0 1px 3px 3px #e7e7e7e7;
 }
 
 /* Categoría postres */

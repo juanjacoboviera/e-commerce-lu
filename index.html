@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 </head>
 <body>
     <header>
@@ -26,14 +27,56 @@
                 <li>
                     <a href="#">Contacto</a>
                 </li>
+                <li>
+                    <a href="#">Carrito</a>
+                </li>
             </ul>
+            <div class="cart">
+                <h2 class="cart__title">Tu canasta</h2>
+                <div class="producto">
+                    <div class="producto__imagen">
+                    <img src="./images/Torta.jpg" height="100px;" width="autopx" alt="Torta de fresa">
+                    </div>
+                    <div class="producto__info">
+                        <h2 class="producto__nombre">Blueberry & Yogurt Pound Cake</h2>
+                        <p class="producto__precio">$13.500</p>
+                        <input type="number" min="0" class="producto__cantidad">
+                    </div>
+                    <i class="fa-regular fa-trash-can producto__eliminar"></i>
+                </div>
+                <div class="producto">
+                    <div class="producto__imagen">
+                    <img src="./images/Torta.jpg" height="100px;" width="autopx" alt="Torta de fresa">
+                    </div>
+                    <div class="producto__info">
+                        <h2 class="producto__nombre">Blueberry & Yogurt Pound Cake</h2>
+                        <p class="producto__precio">$13.500</p>
+                        <input type="number" min="0" class="producto__cantidad">
+                    </div>
+                    <i class="fa-regular fa-trash-can producto__eliminar"></i>
+                </div>
+                <div class="total">
+                    <div class="total__title">Total</div>
+                    <div class="total__price">$0</div>
+                </div>
+                <button type="button" class="btn__buy">Comprar</button>
+                <a href="#">
+                    <i class="fa-solid fa-x cart__close"></i>
+                </a>
+
+            </div>
+        
         </nav>
         <section class="banner-principal">
-            <h1> <span class="pesado">Saborea</span> el<br> momento con<br> un <span class="pesado">premio</span></h1>
+            <h1> Saborea el<br> momento con<br> un premio</h1>
         </section>
     </header>
     <main>
         <section class="categorias">
+            <div class="container__search">
+                <i class="fa-solid fa-magnifying-glass container__searchIcon"></i>
+                <input type="text">
+            </div>
             <h2 class="categoria__titulo categoria__border">Postres</h2>
                 <section class="categoria__grid">
                     <div class="categoria__tarjeta">
@@ -62,5 +105,6 @@
     </main>
     <footer>
     </footer>
+   <script src="./JS/main.js"></script>
 </body>
 </html>

@@ -38,18 +38,20 @@ nav ul li {
 nav a {
   padding: 10px;
   text-decoration: none;
-  color: black;
+  color: #fff;
+  font-weight: 300;
 }
 
 /* Hero */
 
 .banner-principal {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: url(/images/banner1.jpg);
-  height: 100vh;
+  background-image: url(/images/banner5.jpg);
+  height: 75vh;
   width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -58,12 +60,36 @@ nav a {
 
 .banner-principal h1 {
   color: #fff;
-  font-weight: 600;
-  font-size: 3rem;
+  font-weight: 500;
+  font-size: 2.5rem;
   text-align: center;
 }
 
+/* SVG hero wave */
+
+.custom-shape-divider-bottom-1648959545 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1648959545 svg {
+  position: relative;
+  display: block;
+  width: calc(138% + 1.3px);
+  height: 75px;
+}
+
+.custom-shape-divider-bottom-1648959545 .shape-fill {
+  fill: #FFFFFF;
+}
+
 /* Cart */
+
 .cart {
   position: fixed;
   top: 0;
@@ -181,7 +207,8 @@ footer {
   height: 100px;
 }
 
-/* Bloque de filtros */
+
+/* Bloque de filtros (VIEJOS) 
 
 .categorias__filtros{
   display: flex;
@@ -227,47 +254,176 @@ footer {
   outline: none;
 }
 
-/* Categoría postres */
+*/
+
+/* Bloque de filtros (NUEVOS) */
+.categorias__selector ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.categorias__selector ul a {
+  padding: 10px;
+  text-decoration: none;
+  color: rgb(59, 59, 59);
+  font-weight: 300;
+  height: 20px;
+  width: 300px;
+  margin: 0 auto;
+}
+
+
+/* Categoría postres y tortas */
 
 .categorias {
-  margin: 2% 5%;
+  margin: 5% 0% 10% 0;
+}
+
+.categoria__container{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+margin: 50px 0;
+
 }
 
 .categoria__titulo {
+  text-align: center;
   font-size: 1.5rem;
+  color: #2e2526;
+  font-size: 2rem;
 }
 
 .categoria__grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-auto-rows: auto;
-}
+  gap: 25px;
 
-.categoria__border {
-  width: 90vw;
-  border-bottom: 3px solid #a95512;
 }
 
 .categoria__tarjeta {
-  width: 317px;
+  width: 250px;
   height: auto;
   background-color: #fff;
   border-radius: 10px;
-  margin: 15px 10px 15px 0;
   box-shadow: 0px 5px 10px 0px rgb(0 0 0 / 15%);
 }
 
 .categoria__tarjeta img {
+  width: 250px;
+  height: auto;
   border-radius: 10px 10px 0 0;
 }
 
 .categoria__tarjeta h3 {
-  font-size: 1rem;
-  padding: 10px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 20px 10px 10px 10px;
+  text-align: center;
+  color: #9b9697;
+  
 }
 
 .categoria__tarjeta p {
   font-size: 0.9rem;
   padding: 10px;
-  color: #5c5c5c;
+  color: #2e2526;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.categoria__breadcrumb{
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  align-items: center;
+  margin-top: 50px;
+}
+
+
+.categoria__breadcrumb li a {
+  padding: 10px;
+  text-decoration: none;
+  color: #9b9697;
+  font-weight: 300;
+  height: 20px;
+  width: 300px;
+  margin: 0 auto;
+}
+
+.categoria__border {
+  border: 2px solid #9868ce;
+  border-radius: 47%;
+  padding: 2px;
+}
+
+/* Categoría antojos (Brownes, cookiebar y muffins */
+
+.container__antojos {
+  margin-top: 50px ;
+}
+
+.antojos__titulo {
+  margin-bottom: 35px;
+}
+
+.categoria__tarjeta__antojos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  height: 290px;
+  background-color: #ddc7ff;
+  border-radius: 10px;
+  box-shadow: 0px 5px 10px 0px rgb(0 0 0 / 15%);
+}
+
+.categoria__tarjeta__antojos img {
+width: 150px;
+height: auto;
+padding-bottom: 10px;
+}
+
+.categoria__tarjeta__antojos h3 {
+  font-size: 1rem;
+  padding-bottom: 10px;
+  }
+
+  .categoria__tarjeta__antojos p {
+    font-size: 0.8rem;
+  }
+
+/* Seccion nosotros */
+
+.nosotros__flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 100px 0px;
+}
+
+.nosotros__beneficios {
+  width: 250px;
+  height: auto;
+  margin: 10px;
+}
+
+.nosotros__titulo {
+  padding: 15px 0 5px 0;
+  color: #2e2526;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.nosotros__beneficios p {
+  color: #9b9697;
+  font-weight: 300;
+  font-size: 0.8rem;
 }

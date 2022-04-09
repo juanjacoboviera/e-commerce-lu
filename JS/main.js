@@ -81,8 +81,6 @@ let anadirAlCarrito = () =>{
 
             }
         }
-
-
 }
  
 anadirAlCarrito()

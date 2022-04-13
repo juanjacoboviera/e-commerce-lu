@@ -33,14 +33,13 @@ class Producto {
 
 //productos 
 
-const tortaYogurtyArandanos = new Producto ("Torta Yogurt & Arandanos", "Tortas", 800, 31000, 10, "La versatilidad del yogurt griego y los arándanos permite alternar distintos sabores para lograr una combinación deliciosa.")
+const tortaYogurtyArandanos = new Producto ("torta yogurt & arandanos", "tortas", 800, 31000, 10, "La versatilidad del yogurt griego y los arándanos permite alternar distintos sabores para lograr una combinación deliciosa.")
 
-const browniesMelcochudos = new Producto ("Brownies Melcochudos", "Brownies", 20, 33000, 60, "Su consistencia melcochuda, su toque crunchie y sus chips de chocolate extra los hace únicos. Perfectos para acompanar con helado y endulzar a tus conocidos.")
+const browniesMelcochudos = new Producto ("brownies melcochudos", "brownies", 20, 33000, 60, "Su consistencia melcochuda, su toque crunchie y sus chips de chocolate extra los hace únicos. Perfectos para acompanar con helado y endulzar a tus conocidos.")
 
-const cookieBars = new Producto ("Cookie bar", "Galletas", 20, 33000, 40, "Estos cuadritos cargados de amor son perfectos para probar algo diferente y dejarse cautivar con su capa crujiente u su cuerpo blando tipo galleta.")
+const cookieBars = new Producto ("cookie bar", "galletas", 20, 33000, 40, "Estos cuadritos cargados de amor son perfectos para probar algo diferente y dejarse cautivar con su capa crujiente u su cuerpo blando tipo galleta.")
 
-const muffins = new Producto ("Muffins", "Muffins", 10, 25000, 30, "Blanditos y esponjosos, asi son nuestros deliciosos muffins.")
-
+const muffins = new Producto ("muffins", "muffins", 10, 25000, 30, "blanditos y esponjosos, asi son nuestros deliciosos muffins.")
 
 //arrays
 
@@ -53,6 +52,7 @@ let carrito = [];
 let producto 
 let cantidad 
 let seleccion 
+let arrayPrecios = listaProductos.map(obj => ({nombre: obj.nombre, precio: obj.precio})) 
 
 //funciones  
 
@@ -67,7 +67,7 @@ nombreProducto = listaProductos[seleccion].nombre
 return nombreProducto
 }
 
-let cantidadProductos = () => {
+let agregarAlCarrito = () => {
     producto=menu()
     cantidad = prompt(`El valor unitario de ${producto} es de ${listaProductos[seleccion].precio} pesos. Ingresa la cantidad que deseas añadir al carrito`)
     subTotalProducto = listaProductos[seleccion].precio * cantidad;
@@ -79,28 +79,35 @@ let cantidadProductos = () => {
     }
 }
 
+const buscarProducto = (producto, array) => {
+    let filtro = array.filter(el => el.nombre.includes(producto))
+    return filtro;
 
+}
 
+const buscarCategoria = (tipoProducto, array) => {
+    let filtro = array.filter(el => el.categoria.includes(tipoProducto))
+    return filtro;
 
-// let nombreProductos = listaProductos.forEach(producto => {
-//     console.log(producto.nombre)
-// })
+}
 
+const ordenarPrecio = (array, orden) => {
+    if (orden === `menorAMayor`) {
+       let menorAMayor = array.sort((a, b) => a.precio - b.precio)
+       return menorAMayor
+    } else if (orden === `mayorAMenor`) {
+        let mayorAMenor = array.sort((a, b) => b.precio - a.precio)
+        return mayorAMenor
+    }
+}
 
-let keyword = 40000
-let buscar = listaProductos.filter(el => {
-    return el.precio > (keyword)
-    
-    
+const aplicarDescuento = (array, porcentaje) => {
+    let descuento = array.forEach(el =>{
+    let nuevoPrecio = (el.precio * porcentaje) + el.precio;
+    console.log(`El producto es ${el.nombre} y su nuevo precio es de ${nuevoPrecio}`)
 })
+}
 
-
-
-let existe = listaProductos.some(el =>{
-   return el.nombre == `Cookie bar`;
-})
-
-
-console.log(existe)
+aplicarDescuento(listaProductos, .50)
 
 

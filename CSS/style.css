@@ -2,10 +2,12 @@
 * {
   padding: 0;
   margin: 0;
+  
 }
 
 body {
   font-family: "Montserrat", sans-serif;
+  overflow-x: hidden;
 }
 
 .pesado {
@@ -86,6 +88,36 @@ nav a {
 
 .custom-shape-divider-bottom-1648959545 .shape-fill {
   fill: #FFFFFF;
+}
+/* Imagenes laterales */
+
+.imgLateral1 img{
+  position: absolute;
+  top: 90rem;
+  left: -130px;
+}
+
+
+.imgLateral2 img{
+  position: absolute;
+  top: 112rem;
+  right: -25px;
+  width: 130px;
+  height: auto;
+  
+  
+}
+
+/*Estilos dotted line */
+.dottedLine{
+background: url(../images/dottedline.svg) repeat-x left top;
+background-size: contain;
+width: 930px;
+position: absolute;
+left: calc(50% - 510px);
+top: -40px;
+height: 59px;
+z-index: 1;
 }
 
 /* Cart */
@@ -207,7 +239,27 @@ footer {
   height: 100px;
 }
 
+/* Bloque de filtros (Por categoria) */
 
+.categorias__selector ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.categorias__selector ul a {
+  padding: 10px;
+  text-decoration: none;
+  color: rgb(59, 59, 59);
+  font-weight: 300;
+  height: 20px;
+  width: 300px;
+  margin: 0 auto;
+}
+
+/* Bloque de filtros (Search & ordenar por) */
 
 
 .categorias__filtros{
@@ -217,9 +269,10 @@ footer {
   justify-content: space-between;
   margin: 20px 0 30px 0;
 }
-
+ 
 .container {
   position: relative;
+  padding-right: 150px;
 }
 
 .container__searchIcon{
@@ -254,29 +307,7 @@ footer {
   outline: none;
 }
 
-*/
-
-/* Bloque de filtros (NUEVOS) */
-.categorias__selector ul {
-  display: flex;
-  justify-content: center;
-  list-style: none;
-  align-items: center;
-  margin-top: 20px;
-}
-
-.categorias__selector ul a {
-  padding: 10px;
-  text-decoration: none;
-  color: rgb(59, 59, 59);
-  font-weight: 300;
-  height: 20px;
-  width: 300px;
-  margin: 0 auto;
-}
-
-
-/* Categoría postres y tortas */
+/* Categoría postres y tortas(Productos) */
 
 .categorias {
   margin: 5% 0% 10% 0;
@@ -346,7 +377,6 @@ margin: 50px 0;
   margin-top: 50px;
 }
 
-
 .categoria__breadcrumb li a {
   padding: 10px;
   text-decoration: none;
@@ -363,7 +393,7 @@ margin: 50px 0;
   padding: 2px;
 }
 
-/* Categoría antojos (Brownes, cookiebar y muffins */
+/* Categoría antojos (Brownes, cookiebar y muffins) */
 
 .container__antojos {
   margin-top: 50px ;
@@ -403,6 +433,7 @@ padding-bottom: 10px;
 /* Seccion nosotros */
 
 .nosotros__flex {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -423,6 +454,35 @@ padding-bottom: 10px;
 }
 
 .nosotros__beneficios p {
+  color: #9b9697;
+  font-weight: 300;
+  font-size: 0.8rem;
+}
+
+/* Seccion Encuentranos */
+
+.encuentranos__flex {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 100px 0px;
+}
+
+.encuentranos__beneficios {
+  width: 250px;
+  height: auto;
+  margin: 10px;
+}
+
+.encuentranos__titulo {
+  padding: 15px 0 5px 0;
+  color: #2e2526;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.encuentranos__beneficios p {
   color: #9b9697;
   font-weight: 300;
   font-size: 0.8rem;

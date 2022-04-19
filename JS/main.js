@@ -1,7 +1,7 @@
 //constructores
 
 class Producto {
-    constructor(nombre, categoria, gramos, precio, stock, descripcion){
+    constructor(nombre, categoria, gramos, precio, stock, imagen, descripcion){
         this.nombre = nombre;
         this.categoria = categoria;
         this.gramos = parseFloat(gramos);
@@ -9,6 +9,7 @@ class Producto {
         this.stock = parseFloat(stock);
         this.descripcion = descripcion;
         this.vendido = false;
+        this.imagen = imagen;
     }
     comprar(cantidad){
         this.vendido = true;
@@ -33,27 +34,53 @@ class Producto {
 
 //productos 
 
-const tortaYogurtyArandanos = new Producto ("torta yogurt & arandanos", "tortas", 800, 31000, 10, "La versatilidad del yogurt griego y los arándanos permite alternar distintos sabores para lograr una combinación deliciosa.")
+const browniesMelcochudos = new Producto ("Brownies melcochudos", "brownies", 20, 33000, 10, "./images/bananoNutella.jpg", "Su consistencia melcochuda, su toque crunchie y sus chips de chocolate extra los hace únicos. Perfectos para acompanar con helado y endulzar a tus conocidos.")
 
-const browniesMelcochudos = new Producto ("brownies melcochudos", "brownies", 20, 33000, 60, "Su consistencia melcochuda, su toque crunchie y sus chips de chocolate extra los hace únicos. Perfectos para acompanar con helado y endulzar a tus conocidos.")
+const cookieBars = new Producto ("Cookie bar", "galletas", 20, 33000, 10, "./images/bananoNutella.jpg", "Estos cuadritos cargados de amor son perfectos para probar algo diferente y dejarse cautivar con su capa crujiente u su cuerpo blando tipo galleta.")
 
-const cookieBars = new Producto ("cookie bar", "galletas", 20, 33000, 40, "Estos cuadritos cargados de amor son perfectos para probar algo diferente y dejarse cautivar con su capa crujiente u su cuerpo blando tipo galleta.")
+const muffins = new Producto ("Muffins", "muffins", 10, 25000, 10, "./images/bananoNutella.jpg", "blanditos y esponjosos, asi son nuestros deliciosos muffins.")
 
-const muffins = new Producto ("muffins", "muffins", 10, 25000, 30, "blanditos y esponjosos, asi son nuestros deliciosos muffins.")
+const tortaYogurtyArandanos = new Producto ("Torta de Yogurt & Arandanos", "tortas", 800, 31000, 10, "./images/yogurtArandanos.jpg", "La versatilidad del yogurt griego y los arándanos permite alternar distintos sabores para lograr una combinación deliciosa.")
+
+const tortaBanano = new Producto ("Torta de Banano", "tortas", 800, 23000, 10, "./images/banano.jpg", "Hecha sin conservantes ni colorantes artificiales. 100% natural.")
+
+const tortaBananoNutella = new Producto ("Torta de Banano Nutella", "tortas", 800, 28000, 10, "./images/bananoNutella.jpg", "La crema de avellanas(Nutella) potencializa el sabor de nuestros bananos que son seleccionados cuidadosamente para hacer de esta torta una experiencia única de sabor.") 
+
+const tortaBananoMora = new Producto ("Torta de Banano Mora", "tortas", 800, 24000, 10, "./images/bananoMora.jpg", "Usamos moras frescas como topping para resaltar el conjunto de ingredientes que componen nuestra torta.")
+
+const tortaZanahoria = new Producto ("Torta de Zanahoria", "tortas", 800, 23000, 10, "./images/zanahoria.jpg", "La torta de zanahoria es estupenda para la hora de postre, el desayuno o la merienda.")
+
+const tortaNaranjayAmapola = new Producto ("Torta de Naranja & Amapola", "tortas", 800, 23000, 10, "./images/naranjaAmapola.jpg", "Suave y esponjosa con matices de amapola, aquella que conquista el paladar de todo el que la prueba.")
+
+const tortaChocolate = new Producto ("Torta de Chocolate", "tortas", 800, 23000, 10, "./images/chocolate.jpg", "Debido a sus componentes, el chocolate es un ingrediente natural que se transforma en una rica opción para aportarle mayor energía a tus días." )
+
+const pieDeLimon = new Producto ("Pie de Limón", "postres", 8, 55000, 10, "./images/pieDeLimon.jpg", "La combinación del dulce merengue, las gotas cítricas del limón y la crocancia de nuestra galleta da como resultado el contraste perfecto.")
+
+const cheesecakeFresaOFrutosRojos = new Producto ("Cheesecake Fresa o Frutos Rojos", "postres", 12, 75000, 10, "./images/cheesecake.jpg","De la cocina inspiradora de Lu sale el gusto de brindar felicidad en forma de cheesecake. Su técnica es mezclar amor, hornear con pasión y entregar el corazón en cada porción.")
+
+const carrito = {
+    oculto: true,
+    top: 0,
+    right: -400
+}
 
 //arrays
 
-let listaProductos = [tortaYogurtyArandanos, browniesMelcochudos, cookieBars, muffins];
+let listaProductos = [tortaYogurtyArandanos, tortaBananoNutella, tortaBananoMora, tortaZanahoria, tortaNaranjayAmapola, tortaChocolate, tortaBanano, pieDeLimon, cheesecakeFresaOFrutosRojos];
 
-let carrito = [];
+let bodegadeProductos = [];
 
 //variables
 
 let producto 
 let cantidad 
 let seleccion 
-let arrayPrecios = listaProductos.map(obj => ({nombre: obj.nombre, precio: obj.precio})) 
-
+let arrayPrecios = listaProductos.map(obj => ({nombre: obj.nombre, precio: obj.precio}))
+let abrirCarro = document.getElementById('btnToggle');
+let cerrarCarro = document.getElementById('btn__close')
+let carro = document.getElementById('cart');
+let mostrarTortas = document.getElementById('tortas');
+let mostrarPostres = document.getElementById('postres');
 //funciones  
 
 let menu = () => {
@@ -108,6 +135,91 @@ const aplicarDescuento = (array, porcentaje) => {
 })
 }
 
-aplicarDescuento(listaProductos, .50)
+abrirYCerrar = () =>{
+    if (carrito.oculto){
+        carro.style.right = 0
+        carrito.oculto = false 
+    } else {
+        carro.style.right = ""
+        carrito.oculto = true 
+    }
+    return false;
+}
+
+abrirCarro.onclick = abrirYCerrar;
+cerrarCarro.onclick = abrirYCerrar;
 
 
+
+
+const categoriasGrid = document.querySelector('.categoria__grid')
+
+categoriasGrid.innerHTML = ""
+
+// const mapProductos = listaProductos.map( el => {
+//     categoriasGrid.insertAdjacentHTML('beforeend', `<div class="categoria__tarjeta">
+//     <img src="${el.imagen}" alt="${el.nombre}">
+//     <h3>${el.nombre}</h3>
+//     <p>$${el.precio}</p>
+// </div>`)
+// })
+
+// const seleccionCategorias = () =>{
+//     if (mostrarTortas.onclick == true){
+//         buscarCategoria("tortas", listaProductos)
+//         filtro.map( el => {
+//             categoriasGrid.insertAdjacentHTML('beforeend', `<div class="categoria__tarjeta">
+//             <img src="${el.imagen}" alt="${el.nombre}">
+//             <h3>${el.nombre}</h3>
+//             <p>$${el.precio}</p>
+//         </div>`)
+//         })
+//     }
+// }
+
+
+// const btnTorta = () =>{
+//     let filtro = buscarCategoria("tortas", listaProductos)
+//     filtro.map( el => {
+//         categoriasGrid.insertAdjacentHTML('beforeend', `<div class="categoria__tarjeta">
+//         <img src="${el.imagen}" alt="${el.nombre}">
+//         <h3>${el.nombre}</h3>
+//         <p>$${el.precio}</p>
+//     </div>`)
+//     })
+    
+// }
+
+
+// const btnPostre = () =>{
+//     let filtro = buscarCategoria("postres", listaProductos)
+//     filtro.map( el => {
+//         categoriasGrid.insertAdjacentHTML('beforeend', `<div class="categoria__tarjeta">
+//         <img src="${el.imagen}" alt="${el.nombre}">
+//         <h3>${el.nombre}</h3>
+//         <p>$${el.precio}</p>
+//     </div>`)
+//     })
+    
+// }
+
+
+const seleccioncategorias = (categoria)=>{
+    categoriasGrid.innerHTML = ""
+    let filtro = buscarCategoria(categoria, listaProductos)
+    filtro.map( el  => {
+        categoriasGrid.insertAdjacentHTML('beforeend', 
+        `<div class="categoria__tarjeta">
+        <img src="${el.imagen}" alt="${el.nombre}">
+        <h3>${el.nombre}</h3>
+        <p>$${el.precio}</p>
+        </div>`)
+    })
+    return false;
+}
+
+
+seleccioncategorias('torta');
+
+mostrarPostres.onclick = ()=> seleccioncategorias('postres');
+mostrarTortas.onclick = () =>seleccioncategorias('tortas');

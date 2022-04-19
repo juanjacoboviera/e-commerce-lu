@@ -125,7 +125,7 @@ z-index: 1;
 .cart {
   position: fixed;
   top: 0;
-  right: 0;
+  right: -400px;
   width: 360px;
   min-height: 100vh;
   padding:20px;
@@ -133,6 +133,7 @@ z-index: 1;
   box-shadow: 0px 5px 10px 0px rgb(0 0 0 / 15%);
   z-index: 1;
   display: block;
+  transition: all 400ms;
 }
 
 .cart__title {

@@ -52,8 +52,11 @@
                         </div>
                         <div class="producto__info">
                             <h2 class="producto__nombre">Blueberry & Yogurt Pound Cake</h2>
+                            <div class="producto__personalizacion">
+                                <label for="cantidad">Cantidad</label>
+                                <input type="number" min="0" class="producto__cantidad" id="cantidad">
+                            </div>
                             <p class="producto__precio">$13.500</p>
-                            <input type="number" min="0" class="producto__cantidad">
                         </div>
                         <a href="#" class="producto__eliminar trashIconSize">
                             <i class="fa-regular fa-trash-can "></i></a>
@@ -63,13 +66,18 @@
                         <img src="./images/Torta.jpg" height="100px;" width="autopx" alt="Torta de fresa">
                         </div>
                         <div class="producto__info">
-                            <h2 class="producto__nombre">Blueberry & Yogurt Pound Cake</h2>
+                            <h2 class="producto__nombre">Brownies Melcochudos</h2>
+                            <div class="producto__personalizacion">
+                                <label for="cantidad">Cantidad</label>
+                                <input type="number" min="0" class="producto__cantidad" id="cantidad">
+                                <select name="sabor" id="">Sabor</select>
+                            </div>
                             <p class="producto__precio">$13.500</p>
-                            <input type="number" min="0" class="producto__cantidad">
                         </div>
                         <a href="#" class="producto__eliminar trashIconSize">
                             <i class="fa-regular fa-trash-can "></i></a>
                     </div>
+                    
                     <div class="total">
                         <div class="total__title">Total</div>
                         <div class="total__price">$0</div>
@@ -115,6 +123,7 @@
                     </div>
                 </div>
                 <section class="categoria__grid">
+    
                     </section>
                     <ul class="categoria__breadcrumb">
                         <li class="categoria__border"><a href="#">1</a></li>
@@ -132,22 +141,8 @@
                     <!--Antojos-->
                 <div class="container__antojos">
                     <h2 class="categoria__titulo antojos__titulo">Antojos</h2>
-                    <section class="categoria__grid">
-                        <div class="categoria__tarjeta__antojos">
-                            <img src="./images/cookiebar.png" alt="Cookie bar horneada">
-                            <h3>Cookie bar</h3>
-                            <p>x 20 unidades</p>
-                        </div>
-                        <div class="categoria__tarjeta__antojos">
-                            <img src="./images/brownie.png" alt="Brownies melcochudos">
-                            <h3>Brownies Melcochudos</h3>
-                            <p>x 20 unidades</p>
-                        </div>
-                        <div class="categoria__tarjeta__antojos">
-                            <img src="./images/muffin.png" alt="Muffin de chocolate">
-                            <h3>Muffins</h3>
-                            <p>x 20 unidades</p>
-                        </div>
+                    <section class="categoria__grid" id="categoria__antojos">
+                      
                 </div>    
 
                 </section>   

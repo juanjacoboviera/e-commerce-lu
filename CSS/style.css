@@ -89,6 +89,7 @@ nav a {
 .custom-shape-divider-bottom-1648959545 .shape-fill {
   fill: #FFFFFF;
 }
+
 /* Imagenes laterales */
 
 .imgLateral1 img{
@@ -183,12 +184,17 @@ z-index: 1;
   font-size: 0.8rem;
 }
 
+.producto__personalizacion label {
+  font-size: 0.8rem;
+}
+
 .producto__cantidad{
   width: 50px;
   height: 30px;
   border-radius: 5px;
   border: 1px solid #dcdcdc;
-  padding: 14px 45 px;
+  margin-left: 3px;
+  padding-left: 3px;
   font-size: 16px;
   outline: none;
 }
@@ -248,6 +254,10 @@ footer {
   list-style: none;
   align-items: center;
   margin-top: 20px;
+}
+
+#tortas {
+  border-bottom: solid 3px #996ad0;
 }
 
 .categorias__selector ul a {
@@ -370,6 +380,19 @@ margin: 50px 0;
   font-weight: 600;
 }
 
+.categoria__btn {
+  margin: 10px auto;
+  display: block;
+  padding: 5px 20px 5px 20px;
+  border: none;
+  border-radius: 3px;
+  background-color: #996ad0;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
 .categoria__breadcrumb{
   display: flex;
   justify-content: center;
@@ -394,7 +417,7 @@ margin: 50px 0;
   padding: 2px;
 }
 
-/* Categoría antojos (Brownes, cookiebar y muffins) */
+/* Categoría antojos (Brownies, cookiebar y muffins) */
 
 .container__antojos {
   margin-top: 50px ;
@@ -410,7 +433,7 @@ margin: 50px 0;
   justify-content: center;
   align-items: center;
   width: 250px;
-  height: 290px;
+  height: 350px;
   background-color: #ddc7ff;
   border-radius: 10px;
   box-shadow: 0px 5px 10px 0px rgb(0 0 0 / 15%);
@@ -429,6 +452,15 @@ padding-bottom: 10px;
 
   .categoria__tarjeta__antojos p {
     font-size: 0.8rem;
+  }
+
+  .categoria__tarjeta__antojos p:last-of-type{
+    font-size: 0.9rem;
+    padding: 10px;
+    color: #2e2526;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 600;
   }
 
 /* Seccion nosotros */

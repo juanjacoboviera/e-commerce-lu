@@ -46,37 +46,52 @@
             
             <nav class="cart" id="cart">
                 <h2 class="cart__title">Tu canasta</h2>
+                <div class="cart__scroller" id="cartList"></div>
+                <!--
                     <div class="producto">
                         <div class="producto__imagen">
                         <img src="./images/Torta.jpg" height="100px;" width="autopx" alt="Torta de fresa">
                         </div>
                         <div class="producto__info">
-                            <h2 class="producto__nombre">Blueberry & Yogurt Pound Cake</h2>
+                            <div class="producto__container__separador">
+                                <h2 class="producto__nombre">Blueberry & Yogurt Pound Cake</h2>
+                                <a href="#" class="producto__eliminar trashIconSize">
+                                    <i class="fa-regular fa-trash-can "></i></a>
+
+                            </div>
                             <div class="producto__personalizacion">
                                 <label for="cantidad">Cantidad</label>
                                 <input type="number" min="0" class="producto__cantidad" id="cantidad">
                             </div>
                             <p class="producto__precio">$13.500</p>
                         </div>
-                        <a href="#" class="producto__eliminar trashIconSize">
-                            <i class="fa-regular fa-trash-can "></i></a>
+                        
                     </div>
                     <div class="producto">
                         <div class="producto__imagen">
                         <img src="./images/Torta.jpg" height="100px;" width="autopx" alt="Torta de fresa">
                         </div>
                         <div class="producto__info">
-                            <h2 class="producto__nombre">Brownies Melcochudos</h2>
-                            <div class="producto__personalizacion">
-                                <label for="cantidad">Cantidad</label>
-                                <input type="number" min="0" class="producto__cantidad" id="cantidad">
-                                <select name="sabor" id="">Sabor</select>
+                            <div class="producto__container__separador">
+                                <h2 class="producto__nombre">Brownie Melcochudos</h2>
+                                <a href="#" class="producto__eliminar trashIconSize">
+                                    <i class="fa-regular fa-trash-can "></i></a>
                             </div>
-                            <p class="producto__precio">$13.500</p>
+                            <div class="producto__personalizacion">
+                                <label for="">Cantidad</label>
+                                <input type="number" min="0" class="producto__cantidad" id="">
+                                <select name="sabor" id="">
+                                    <option value="sabor">Sabor</option>
+                                    <option value="chocolate">Chocolate</option>
+                                    <option value="fresa">Fresa</option>
+                                    <option value="vainilla">Vainilla</option>
+                                </select>
+                            </div>
+                            <p class="producto__precio">$22.500</p>
                         </div>
-                        <a href="#" class="producto__eliminar trashIconSize">
-                            <i class="fa-regular fa-trash-can "></i></a>
-                    </div>
+                        
+                    </div> !-->
+                  
                     
                     <div class="total">
                         <div class="total__title">Total</div>
@@ -86,6 +101,7 @@
                     <a href="#" class="cart__close" id="btn__close">
                         <i class="fa-solid fa-x"></i>
                     </a>
+            </nav>        
                 
             
         </header>

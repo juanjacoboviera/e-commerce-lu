@@ -1,7 +1,8 @@
 //constructores
 
 class Producto {
-    constructor(nombre, categoria, gramos, precio, stock, imagen, descripcion){
+    constructor(id, nombre, categoria, gramos, precio, stock, imagen, descripcion, sabores=[]){
+        this.id = id;
         this.nombre = nombre;
         this.categoria = categoria;
         this.gramos = parseFloat(gramos);
@@ -10,6 +11,7 @@ class Producto {
         this.descripcion = descripcion;
         this.vendido = false;
         this.imagen = imagen;
+        this.sabores = sabores;
     }
     comprar(cantidad){
         this.vendido = true;
@@ -34,36 +36,36 @@ class Producto {
 
 //productos 
 
-const browniesMelcochudos = new Producto ("Brownies melcochudos", "brownies", 20, 33000, 10, "./images/brownie.png", "Su consistencia melcochuda, su toque crunchie y sus chips de chocolate extra los hace únicos. Perfectos para acompanar con helado y endulzar a tus conocidos.")
+const browniesMelcochudos = new Producto ("l", "Brownies melcochudos", "antojos", 20, 33000, 10, "./images/brownie.png", "Su consistencia melcochuda, su toque crunchie y sus chips de chocolate extra los hace únicos. Perfectos para acompanar con helado y endulzar a tus conocidos.")
 
-const cookieBars = new Producto ("Cookie bar", "galletas", 20, 33000, 10, "./images/cookiebar.png", "Estos cuadritos cargados de amor son perfectos para probar algo diferente y dejarse cautivar con su capa crujiente u su cuerpo blando tipo galleta.")
+const cookieBars = new Producto ("m","Cookie bar", "antojos", 20, 33000, 10, "./images/cookiebar.png", "Estos cuadritos cargados de amor son perfectos para probar algo diferente y dejarse cautivar con su capa crujiente u su cuerpo blando tipo galleta.", ['Chocolate', 'Chip de Chocolate', 'Avena'])
 
-const muffins = new Producto ("Muffins", "muffins", 10, 25000, 10, "./images/muffin.png", "blanditos y esponjosos, asi son nuestros deliciosos muffins.")
+const muffins = new Producto ("n","Muffins", "antojos", 10, 25000, 10, "./images/muffin.png", "blanditos y esponjosos, asi son nuestros deliciosos muffins.", ['Manzana', 'Chocolate', 'Zanahoria'])
 
-const tortaYogurtyArandanos = new Producto ("Torta de Yogurt & Arandanos 800g", "tortas", 800, 31000, 10, "./images/yogurtArandanos.jpg", "La versatilidad del yogurt griego y los arándanos permite alternar distintos sabores para lograr una combinación deliciosa.")
+const tortaYogurtyArandanos = new Producto ("a", "Torta de Yogurt & Arandanos 800g", "tortas", 800, 31000, 10, "./images/yogurtArandanos.jpg", "La versatilidad del yogurt griego y los arándanos permite alternar distintos sabores para lograr una combinación deliciosa.")
 
-const tortaBanano = new Producto ("Torta de Banano 800g", "tortas", 800, 23000, 10, "./images/banano.jpg", "Hecha sin conservantes ni colorantes artificiales. 100% natural.")
+const tortaBanano = new Producto ("b", "Torta de Banano 800g", "tortas", 800, 23000, 10, "./images/banano.jpg", "Hecha sin conservantes ni colorantes artificiales. 100% natural.")
 
-const tortaBananoNutella = new Producto ("Torta de Banano Nutella 800g", "tortas", 800, 28000, 10, "./images/bananoNutella.jpg", "La crema de avellanas(Nutella) potencializa el sabor de nuestros bananos que son seleccionados cuidadosamente para hacer de esta torta una experiencia única de sabor.") 
+const tortaBananoNutella = new Producto ("c", "Torta de Banano Nutella 800g", "tortas", 800, 28000, 10, "./images/bananoNutella.jpg", "La crema de avellanas(Nutella) potencializa el sabor de nuestros bananos que son seleccionados cuidadosamente para hacer de esta torta una experiencia única de sabor.") 
 
-const tortaBananoMora = new Producto ("Torta de Banano Mora 800g", "tortas", 800, 24000, 10, "./images/bananoMora.jpg", "Usamos moras frescas como topping para resaltar el conjunto de ingredientes que componen nuestra torta.")
+const tortaBananoMora = new Producto ("d","Torta de Banano Mora 800g", "tortas", 800, 24000, 10, "./images/bananoMora.jpg", "Usamos moras frescas como topping para resaltar el conjunto de ingredientes que componen nuestra torta.")
 
-const tortaZanahoria = new Producto ("Torta de Zanahoria 800g", "tortas", 800, 23000, 10, "./images/zanahoria.jpg", "La torta de zanahoria es estupenda para la hora de postre, el desayuno o la merienda.")
+const tortaZanahoria = new Producto ("e","Torta de Zanahoria 800g", "tortas", 800, 23000, 10, "./images/zanahoria.jpg", "La torta de zanahoria es estupenda para la hora de postre, el desayuno o la merienda.")
 
-const tortaNaranjayAmapola = new Producto ("Torta de Naranja & Amapola 800g", "tortas", 800, 23000, 10, "./images/naranjaAmapola.jpg", "Suave y esponjosa con matices de amapola, aquella que conquista el paladar de todo el que la prueba.")
+const tortaNaranjayAmapola = new Producto ("f","Torta de Naranja & Amapola 800g", "tortas", 800, 23000, 10, "./images/naranjaAmapola.jpg", "Suave y esponjosa con matices de amapola, aquella que conquista el paladar de todo el que la prueba.")
 
-const tortaChocolate = new Producto ("Torta de Chocolate 800g", "tortas", 800, 23000, 10, "./images/chocolate.jpg", "Debido a sus componentes, el chocolate es un ingrediente natural que se transforma en una rica opción para aportarle mayor energía a tus días." )
+const tortaChocolate = new Producto ("g","Torta de Chocolate 800g", "tortas", 800, 23000, 10, "./images/chocolate.jpg", "Debido a sus componentes, el chocolate es un ingrediente natural que se transforma en una rica opción para aportarle mayor energía a tus días." )
 
-const pieDeLimon = new Producto ("Pie de Limón 10 porciones", "postres", 8, 55000, 10, "./images/pieDeLimon.jpg", "La combinación del dulce merengue, las gotas cítricas del limón y la crocancia de nuestra galleta da como resultado el contraste perfecto.")
+const pieDeLimon = new Producto ("j","Pie de Limón 10 porciones", "postres", 8, 55000, 10, "./images/pieDeLimon.jpg", "La combinación del dulce merengue, las gotas cítricas del limón y la crocancia de nuestra galleta da como resultado el contraste perfecto.")
 
-const cheesecakeFresaOFrutosRojos = new Producto ("Cheesecake Fresa o Frutos Rojos 12 porciones", "postres", 12, 75000, 10, "./images/cheesecake.jpg","De la cocina inspiradora de Lu sale el gusto de brindar felicidad en forma de cheesecake. Su técnica es mezclar amor, hornear con pasión y entregar el corazón en cada porción.")
+const cheesecakeFresaOFrutosRojos = new Producto ("k","Cheesecake Fresa o Frutos Rojos 12 porciones", "postres", 12, 75000, 10, "./images/cheesecake.jpg","De la cocina inspiradora de Lu sale el gusto de brindar felicidad en forma de cheesecake. Su técnica es mezclar amor, hornear con pasión y entregar el corazón en cada porción.", ['Frutos rojos', 'Fresa'])
 
 
 
 
 //arrays
 
-let listaProductos = [tortaYogurtyArandanos, tortaBananoNutella, tortaBananoMora, tortaZanahoria, tortaNaranjayAmapola, tortaChocolate, tortaBanano, pieDeLimon, cheesecakeFresaOFrutosRojos];
+let listaProductos = [tortaYogurtyArandanos, tortaBananoNutella, tortaBananoMora, tortaZanahoria, tortaNaranjayAmapola, tortaChocolate, tortaBanano, pieDeLimon, cheesecakeFresaOFrutosRojos, browniesMelcochudos, cookieBars, muffins];
 
 let listaDeAntojos = [browniesMelcochudos, cookieBars, muffins]
 
@@ -77,17 +79,22 @@ let filtros = {
     busqueda: ""  
 }
 
+let cart = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : []
 let carrito = true
 const abrirCarro = document.getElementById('btnToggle');
 const cerrarCarro = document.getElementById('btn__close')
 const carro = document.getElementById('cart');
+const cartList = document.getElementById('cartList');
 const mostrarTortas = document.getElementById('tortas');
 const mostrarPostres = document.getElementById('postres');
 const selector = document.getElementById('filtros')
 const categoriasGrid = document.querySelector('.categoria__grid')
 const categoriaAntojos = document.querySelector('#categoria__antojos')
-
 const busquedaPersonalizada = document.getElementsByClassName('container__search')[0]
+let btnAgregarProducto
+
+
+
 
 
 //funciones  
@@ -174,29 +181,116 @@ const filtroDeProductos = ()=>{
     filtro = buscarProducto(filtros.busqueda, filtro)
     filtro.map( el  => {
         categoriasGrid.insertAdjacentHTML('beforeend', 
-        `<div class="categoria__tarjeta">
+        `<div class="categoria__tarjeta ancestro">
         <img src="${el.imagen}" alt="${el.nombre}">
         <h3>${el.nombre}</h3>
         <p>$${el.precio}</p>
-        <button class="categoria__btn">Agregar</button>
+        `+(el.sabores.length > 0 ? `<select class="select__btn" name="sabor" id="">
+        <option value="">Sabor</option>
+        `+el.sabores.map(el => `<option value="${el}">${el}</option>`)+`
+        </select>`: `` )+`
+        <button class="categoria__btn" id="${el.nombre}">Agregar</button>
         </div>`)
+       
     })
+    
+    Array.from(document.getElementsByClassName('select__btn')).forEach( e => {
+        e.addEventListener('change', seleccionarSabor)
+        
+    })
+
+    Array.from(document.getElementsByClassName('categoria__btn')).forEach( e => {
+        e.onclick = agregarAlCanasto
+    })
+    
     return false;
 }
+
+
 
 const antojos = () => {
     listaDeAntojos.map(el => {
         categoriaAntojos.insertAdjacentHTML('beforeend', 
-        `<div class="categoria__tarjeta__antojos">
+        `<div class="categoria__tarjeta__antojos ancestro">
         <img src="${el.imagen}" alt="${el.nombre}">
         <h3>${el.nombre}</h3>
         <p>x ${el.gramos} unidades</p>
         <p>$${el.precio}</p>
-        <button class="categoria__btn">Agregar</button>
+        `+(el.sabores.length > 0 ? `<select class="select__btn" name="sabor" id="">
+        <option value="">Sabor</option>
+        `+el.sabores.map(el => `<option value="${el}">${el}</option>`)+`
+        </select>`: `` )+`
+        <button class="categoria__btn" id="${el.nombre}">Agregar</button>
         </div>
         `)
     })
 }
+
+const dibujarCarrito = () => {
+    cartList.innerHTML = ""
+    if (cart.length == 0){
+        cartList.insertAdjacentHTML('beforeend', `<p>La canasta está vacia</p>`)
+    } else {
+        localStorage.setItem('cart', JSON.stringify(cart))
+        cart.map( (el, i)  => {
+        cartList.insertAdjacentHTML('beforeend', 
+         ` <div class="producto">
+    <div class="producto__imagen">
+    <img src="${el.producto.imagen}" height="100px;" width="autopx" alt="${el.producto.nombre}">
+    </div>
+    <div class="producto__info">
+        <div class="producto__container__separador">
+            <h2 class="producto__nombre">${el.producto.nombre}</h2>
+            <span>${el.sabor}</span>
+            <a href="#" class="producto__eliminar trashIconSize" eliminar="${el.producto.id}">
+                <i class="fa-regular fa-trash-can "></i></a>
+
+        </div>
+        <div class="producto__personalizacion">
+            <label for="cantidad">Cantidad</label>
+            <input type="number" min="0" class="producto__cantidad" value="${el.cantidad}" id="cantidad">
+        </div>
+        <p class="producto__precio">$${el.producto.precio}</p>
+    </div>
+    `)     
+    })}
+    
+    Array.from(document.getElementsByClassName('producto__eliminar')).forEach( e => {
+        e.onclick = eliminarDelCanasto
+    })
+}
+
+
+
+//Event listeners
+
+const seleccionarSabor = (e) =>{
+    e.target.closest(".ancestro").querySelector('.categoria__btn').setAttribute('sabor', e.target.value)
+}
+
+let eliminarDelCanasto = e => {
+    e.preventDefault()
+    cart= cart.filter((el) => el.producto.id != e.target.closest('a').getAttribute('eliminar') )
+    dibujarCarrito()
+}
+
+const agregarAlCanasto = (e) =>{
+    e.preventDefault()
+    const existe = cart.find(el => el.producto.nombre === e.target.id && (!e.target.getAttribute('sabor') || el.sabor == e.target.getAttribute('sabor')))
+    let producto = buscarProducto(e.target.id, listaProductos)[0]
+    if (existe){
+        existe.cantidad += 1
+
+    } else{
+        cart.push({cantidad: 1,producto: producto, sabor: e.target.getAttribute('sabor') || ''})
+    }
+    dibujarCarrito()
+    
+if(carrito == true){
+    abrirCarro.click()
+}
+}
+
 
 mostrarPostres.onclick = ()=> {
     mostrarTortas.style = ''
@@ -222,5 +316,11 @@ busquedaPersonalizada.addEventListener('keyup', (e) =>{
     return filtroDeProductos()
 });
 
-filtroDeProductos()
+
+
 antojos()
+filtroDeProductos()
+dibujarCarrito()
+
+
+

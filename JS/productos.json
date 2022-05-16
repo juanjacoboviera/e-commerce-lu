@@ -1,0 +1,137 @@
+{
+    "productos": [
+        {
+            "id": "l",
+            "nombre": "Brownies melcochudos",
+            "categorias": "antojos",
+            "gramos": 20,
+            "precio": 33000,
+            "stock": 10,
+            "descripcion": "Su consistencia melcochuda, su toque crunchie y sus chips de chocolate extra los hace únicos. Perfectos para acompanar con helado y endulzar a tus conocidos.",
+            "imagen": "./images/brownie.png",
+            "sabores": []
+        },
+        {
+            "id": "m",
+            "nombre": "Cookie bar",
+            "categorias": "antojos",
+            "gramos": 20,
+            "precio": 33000,
+            "stock": 10,
+            "descripcion": "blanditos y esponjosos, asi son nuestros deliciosos muffins.",
+            "imagen": "./images/muffin.png",
+            "sabores": ["Manzana", "Chocolate", "Zanahoria"]
+        },
+        {
+            "id": "n",
+            "nombre": "Muffins",
+            "categorias": "antojos",
+            "gramos": 10,
+            "precio": 25000,
+            "stock": 10,
+            "descripcion": "blanditos y esponjosos, asi son nuestros deliciosos muffins.",
+            "imagen": "./images/muffin.png",
+            "sabores": ["Manzana", "Chocolate", "Zanahoria"]
+        },
+        {
+            "id": "a",
+            "nombre": "Torta de Yogurt & Arandanos 800g",
+            "categorias": "tortas",
+            "gramos": 800,
+            "precio": 31000,
+            "stock": 10,
+            "descripcion": "La versatilidad del yogurt griego y los arándanos permite alternar distintos sabores para lograr una combinación deliciosa.",
+            "imagen": "./images/yogurtArandanos.jpg",
+            "sabores": []
+        },
+        {
+            "id": "l",
+            "nombre": "",
+            "categorias": "",
+            "gramos": "",
+            "precio": "",
+            "stock": "",
+            "descripcion": "",
+            "imagen": "",
+            "sabores": []
+        },
+        {
+            "id": "l",
+            "nombre": "",
+            "categorias": "",
+            "gramos": "",
+            "precio": "",
+            "stock": "",
+            "descripcion": "",
+            "imagen": "",
+            "sabores": []
+        },
+        {
+            "id": "l",
+            "nombre": "",
+            "categorias": "",
+            "gramos": "",
+            "precio": "",
+            "stock": "",
+            "descripcion": "",
+            "imagen": "",
+            "sabores": []
+        },
+        {
+            "id": "l",
+            "nombre": "",
+            "categorias": "",
+            "gramos": "",
+            "precio": "",
+            "stock": "",
+            "descripcion": "",
+            "imagen": "",
+            "sabores": []
+        },
+        {
+            "id": "l",
+            "nombre": "",
+            "categorias": "",
+            "gramos": "",
+            "precio": "",
+            "stock": "",
+            "descripcion": "",
+            "imagen": "",
+            "sabores": []
+        },
+        {
+            "id": "l",
+            "nombre": "",
+            "categorias": "",
+            "gramos": "",
+            "precio": "",
+            "stock": "",
+            "descripcion": "",
+            "imagen": "",
+            "sabores": []
+        },
+        {
+            "id": "l",
+            "nombre": "",
+            "categorias": "",
+            "gramos": "",
+            "precio": "",
+            "stock": "",
+            "descripcion": "",
+            "imagen": "",
+            "sabores": []
+        },
+        {
+            "id": "l",
+            "nombre": "",
+            "categorias": "",
+            "gramos": "",
+            "precio": "",
+            "stock": "",
+            "descripcion": "",
+            "imagen": "",
+            "sabores": []
+        }
+        
+    ]
+}

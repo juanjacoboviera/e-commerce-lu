@@ -9,7 +9,6 @@ class Producto {
         this.precio = parseFloat(precio);
         this.stock = parseFloat(stock);
         this.descripcion = descripcion;
-        this.vendido = false;
         this.imagen = imagen;
         this.sabores = sabores;
     }

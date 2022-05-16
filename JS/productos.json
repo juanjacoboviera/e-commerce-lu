@@ -3,7 +3,7 @@
         {
             "id": "l",
             "nombre": "Brownies melcochudos",
-            "categorias": "antojos",
+            "categoria": "antojos",
             "gramos": 20,
             "precio": 33000,
             "stock": 10,
@@ -14,7 +14,7 @@
         {
             "id": "m",
             "nombre": "Cookie bar",
-            "categorias": "antojos",
+            "categoria": "antojos",
             "gramos": 20,
             "precio": 33000,
             "stock": 10,
@@ -25,7 +25,7 @@
         {
             "id": "n",
             "nombre": "Muffins",
-            "categorias": "antojos",
+            "categoria": "antojos",
             "gramos": 10,
             "precio": 25000,
             "stock": 10,
@@ -36,7 +36,7 @@
         {
             "id": "a",
             "nombre": "Torta de Yogurt & Arandanos 800g",
-            "categorias": "tortas",
+            "categoria": "tortas",
             "gramos": 800,
             "precio": 31000,
             "stock": 10,

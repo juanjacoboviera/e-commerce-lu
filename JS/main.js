@@ -64,10 +64,9 @@ const cheesecakeFresaOFrutosRojos = new Producto ("k","Cheesecake Fresa o Frutos
 
 //arrays
 
-let listaProductos = [tortaYogurtyArandanos, tortaBananoNutella, tortaBananoMora, tortaZanahoria, tortaNaranjayAmapola, tortaChocolate, tortaBanano, pieDeLimon, cheesecakeFresaOFrutosRojos, browniesMelcochudos, cookieBars, muffins];
-
-let listaDeAntojos = [browniesMelcochudos, cookieBars, muffins]
-
+// let listaProductos = [tortaYogurtyArandanos, tortaBananoNutella, tortaBananoMora, tortaZanahoria, tortaNaranjayAmapola, tortaChocolate, tortaBanano, pieDeLimon, cheesecakeFresaOFrutosRojos, browniesMelcochudos, cookieBars, muffins];
+let  listaProductos = []
+let listaDeAntojos = []
 let bodegadeProductos = [];
 
 //variables
@@ -91,10 +90,6 @@ const categoriasGrid = document.querySelector('.categoria__grid')
 const categoriaAntojos = document.querySelector('#categoria__antojos')
 const busquedaPersonalizada = document.getElementsByClassName('container__search')[0]
 let btnAgregarProducto
-
-
-
-
 
 //funciones  
 
@@ -128,6 +123,7 @@ const buscarProducto = (producto, array) => {
 }
 
 const buscarCategoria = (tipoProducto, array) => {
+    console.log(array)
     let filtro = array.filter(el => el.categoria.includes(tipoProducto))
     return filtro;
 
@@ -260,7 +256,6 @@ const dibujarCarrito = () => {
 }
 
 
-
 //Event listeners
 
 const seleccionarSabor = (e) =>{
@@ -284,42 +279,52 @@ const agregarAlCanasto = (e) =>{
         cart.push({cantidad: 1,producto: producto, sabor: e.target.getAttribute('sabor') || ''})
     }
     dibujarCarrito()
+        
+    if(carrito == true){
+        abrirCarro.click()
+    }
+}
+
+const iniciar = async () =>{
+    const llamadoBd = await fetch('https://juanjacoboviera.github.io/e-commerce-lu/JS/productos.json')
+        .then(response => response.json())
+        .then(json => {
+            listaProductos = json.productos
+            listaDeAntojos = [listaProductos.find(el => el.id === "l"), listaProductos.find(el => el.id === "m"),listaProductos.find(el => el.id === "n")]
+            console.log(listaProductos, listaDeAntojos)
+        })
     
-if(carrito == true){
-    abrirCarro.click()
+    mostrarPostres.onclick = ()=> {
+        mostrarTortas.style = ''
+        filtros.categoria = 'postres';
+        mostrarTortas.style = 'border-bottom: hidden;'
+        mostrarPostres.style = 'border-bottom: solid 3px #996ad0;'
+        return filtroDeProductos() 
+    };
+    
+    mostrarTortas.onclick = ()=> {
+        mostrarPostres.style = ''
+        filtros.categoria = 'tortas';
+        return filtroDeProductos()
+    };
+    
+    selector.addEventListener('change', (e) =>{
+        filtros.orden = e.target.value;
+        return filtroDeProductos()
+    });
+    
+    busquedaPersonalizada.addEventListener('keyup', (e) =>{
+        filtros.busqueda = e.target.value;
+        return filtroDeProductos()
+    });
+    
+    
+    console.log("test 1")
+    antojos()
+    filtroDeProductos()
+    dibujarCarrito()
 }
-}
 
-
-mostrarPostres.onclick = ()=> {
-    mostrarTortas.style = ''
-    filtros.categoria = 'postres';
-    mostrarTortas.style = 'border-bottom: hidden;'
-    mostrarPostres.style = 'border-bottom: solid 3px #996ad0;'
-    return filtroDeProductos() 
-};
-
-mostrarTortas.onclick = ()=> {
-    mostrarPostres.style = ''
-    filtros.categoria = 'tortas';
-    return filtroDeProductos()
-};
-
-selector.addEventListener('change', (e) =>{
-    filtros.orden = e.target.value;
-    return filtroDeProductos()
-});
-
-busquedaPersonalizada.addEventListener('keyup', (e) =>{
-    filtros.busqueda = e.target.value;
-    return filtroDeProductos()
-});
-
-
-
-antojos()
-filtroDeProductos()
-dibujarCarrito()
-
+iniciar()
 
 

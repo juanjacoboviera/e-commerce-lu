@@ -59,9 +59,6 @@ const pieDeLimon = new Producto ("j","Pie de Limón 10 porciones", "postres", 8,
 
 const cheesecakeFresaOFrutosRojos = new Producto ("k","Cheesecake Fresa o Frutos Rojos 12 porciones", "postres", 12, 75000, 10, "./images/cheesecake.jpg","De la cocina inspiradora de Lu sale el gusto de brindar felicidad en forma de cheesecake. Su técnica es mezclar amor, hornear con pasión y entregar el corazón en cada porción.", ['Frutos rojos', 'Fresa'])
 
-
-
-
 //arrays
 
 // let listaProductos = [tortaYogurtyArandanos, tortaBananoNutella, tortaBananoMora, tortaZanahoria, tortaNaranjayAmapola, tortaChocolate, tortaBanano, pieDeLimon, cheesecakeFresaOFrutosRojos, browniesMelcochudos, cookieBars, muffins];
@@ -92,6 +89,14 @@ const busquedaPersonalizada = document.getElementsByClassName('container__search
 let btnAgregarProducto
 
 //funciones  
+
+const setTotal = () =>{
+    let total = 0
+    document.querySelectorAll('#cartList .producto__cantidad').forEach(el =>{
+        total += el.dataset.precio * el.value
+    })
+    document.querySelector(".total__price").innerHTML=`$${total}`
+}
 
 let menu = () => {
     let seleccion = parseInt(prompt(`¡Bienvenidos a Lu Postres+Tortas! Los productos que tenemos disponibles son:\n\n1. ${listaProductos[0].nombre} \n2. ${listaProductos[1].nombre} \n3 ${listaProductos[2].nombre} \n4 ${listaProductos[3].nombre}. \n\n Digite el numero del producto que desea comprar o "Cancel" para salir.`));
@@ -181,10 +186,10 @@ const filtroDeProductos = ()=>{
         <h3>${el.nombre}</h3>
         <p>$${el.precio}</p>
         `+(el.sabores.length > 0 ? `<select class="select__btn" name="sabor" id="">
-        <option value="">Sabor</option>
+        <option value="">Seleccionar</option>
         `+el.sabores.map(el => `<option value="${el}">${el}</option>`)+`
         </select>`: `` )+`
-        <button class="categoria__btn" id="${el.nombre}">Agregar</button>
+        <button class="categoria__btn" id="${el.nombre}"`+(el.sabores.length > 0 ? " disabled" : "")+`>Agregar</button>
         </div>`)
        
     })
@@ -212,10 +217,10 @@ const antojos = () => {
         <p>x ${el.gramos} unidades</p>
         <p>$${el.precio}</p>
         `+(el.sabores.length > 0 ? `<select class="select__btn" name="sabor" id="">
-        <option value="">Sabor</option>
+        <option value="">Seleccionar</option>
         `+el.sabores.map(el => `<option value="${el}">${el}</option>`)+`
         </select>`: `` )+`
-        <button class="categoria__btn" id="${el.nombre}">Agregar</button>
+        <button class="categoria__btn" id="${el.nombre}"`+(el.sabores.length > 0 ? " disabled" : "")+`>Agregar</button>
         </div>
         `)
     })
@@ -226,7 +231,7 @@ const dibujarCarrito = () => {
     if (cart.length == 0){
         cartList.insertAdjacentHTML('beforeend', `<p>La canasta está vacia</p>`)
     } else {
-        localStorage.setItem('cart', JSON.stringify(cart))
+        
         cart.map( (el, i)  => {
         cartList.insertAdjacentHTML('beforeend', 
          ` <div class="producto">
@@ -243,29 +248,56 @@ const dibujarCarrito = () => {
         </div>
         <div class="producto__personalizacion">
             <label for="cantidad">Cantidad</label>
-            <input type="number" min="0" class="producto__cantidad" value="${el.cantidad}" id="cantidad">
+            <input type="number" min="0" class="producto__cantidad" data-precio="${el.producto.precio}" value="${el.cantidad}" id="cantidad">
         </div>
         <p class="producto__precio">$${el.producto.precio}</p>
     </div>
     `)     
     })}
-    
+    localStorage.setItem('cart', JSON.stringify(cart))
+    setTotal()
     Array.from(document.getElementsByClassName('producto__eliminar')).forEach( e => {
         e.onclick = eliminarDelCanasto
+    })
+    Array.from(document.getElementsByClassName('producto__cantidad')).forEach( e => {
+        e.addEventListener('change', (e) =>{
+            const subtotal = e.target.value * e.target.dataset.precio
+            e.target.closest('.producto__info').querySelector('.producto__precio').innerHTML= `$${subtotal}`
+            setTotal()
+        });
     })
 }
 
 
-//Event listeners
+//event listeners
 
 const seleccionarSabor = (e) =>{
     e.target.closest(".ancestro").querySelector('.categoria__btn').setAttribute('sabor', e.target.value)
+    if(e.target.value != ""){
+        e.target.closest(".ancestro").querySelector('.categoria__btn').disabled = false;
+    } else{
+        e.target.closest(".ancestro").querySelector('.categoria__btn').disabled = true;
+    }
 }
 
 let eliminarDelCanasto = e => {
     e.preventDefault()
+    const producto = cart.find(el => el.producto.id == e.target.closest('a').getAttribute('eliminar'))
     cart= cart.filter((el) => el.producto.id != e.target.closest('a').getAttribute('eliminar') )
     dibujarCarrito()
+    Toastify({
+        text: `Se ha eliminado ${producto.producto.nombre} exitosamente`,
+        duration: 3000,
+        newWindow: true,
+        close: true,
+        gravity: "top", // `top` or `bottom`
+        position: "center", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+          background: "linear-gradient(to right, #00b09b, #96c93d)",
+        }
+      }).showToast();
+      
 }
 
 const agregarAlCanasto = (e) =>{
@@ -284,6 +316,8 @@ const agregarAlCanasto = (e) =>{
         abrirCarro.click()
     }
 }
+
+//funcion fetch
 
 const iniciar = async () =>{
     const llamadoBd = await fetch('https://juanjacoboviera.github.io/e-commerce-lu/JS/productos.json')

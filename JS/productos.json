@@ -19,8 +19,8 @@
             "precio": 33000,
             "stock": 10,
             "descripcion": "blanditos y esponjosos, asi son nuestros deliciosos muffins.",
-            "imagen": "./images/muffin.png",
-            "sabores": ["Manzana", "Chocolate", "Zanahoria"]
+            "imagen": "./images/cookiebar.png",
+            "sabores": ["Chocolate", "Chip de Chocolate", "Avena"]
         },
         {
             "id": "n",
@@ -43,6 +43,94 @@
             "descripcion": "La versatilidad del yogurt griego y los arándanos permite alternar distintos sabores para lograr una combinación deliciosa.",
             "imagen": "./images/yogurtArandanos.jpg",
             "sabores": []
-        }       
+        },
+        {
+            "id": "b",
+            "nombre": "Torta de Banano 800g",
+            "categoria": "tortas",
+            "gramos": 800,
+            "precio": 23000,
+            "stock": 10,
+            "descripcion": "Hecha sin conservantes ni colorantes artificiales. 100% natural.",
+            "imagen": "./images/banano.jpg",
+            "sabores": []
+        },
+        {
+            "id": "c",
+            "nombre": "Torta de Banano Nutella 800g",
+            "categoria": "tortas",
+            "gramos": 800,
+            "precio": 28000,
+            "stock": 10,
+            "descripcion": "La crema de avellanas(Nutella) potencializa el sabor de nuestros bananos que son seleccionados cuidadosamente para hacer de esta torta una experiencia única de sabor.",
+            "imagen": "./images/bananoNutella.jpg",
+            "sabores": []
+        },
+        {
+            "id": "d",
+            "nombre": "Torta de Banano Mora 800g",
+            "categoria": "tortas",
+            "gramos": 800,
+            "precio": 24000,
+            "stock": 10,
+            "descripcion": "Usamos moras frescas como topping para resaltar el conjunto de ingredientes que componen nuestra torta.",
+            "imagen": "./images/bananoMora.jpg",
+            "sabores": []
+        },
+        {
+            "id": "e",
+            "nombre": "Torta de Zanahoria 800g",
+            "categoria": "tortas",
+            "gramos": 800,
+            "precio": 23000,
+            "stock": 10,
+            "descripcion": "La torta de zanahoria es estupenda para la hora de postre, el desayuno o la merienda.",
+            "imagen": "./images/zanahoria.jpg",
+            "sabores": []
+        },
+        {
+            "id": "f",
+            "nombre": "Torta de Naranja & Amapola 800g",
+            "categoria": "tortas",
+            "gramos": 800,
+            "precio": 23000,
+            "stock": 10,
+            "descripcion": "Suave y esponjosa con matices de amapola, aquella que conquista el paladar de todo el que la prueba.",
+            "imagen": "./images/naranjaAmapola.jpg",
+            "sabores": []
+        },
+        {
+            "id": "g",
+            "nombre": "Torta de Chocolate 800g",
+            "categoria": "tortas",
+            "gramos": 800,
+            "precio": 23000,
+            "stock": 10,
+            "descripcion": "Debido a sus componentes, el chocolate es un ingrediente natural que se transforma en una rica opción para aportarle mayor energía a tus días.",
+            "imagen": "./images/chocolate.jpg",
+            "sabores": []
+        },
+        {
+            "id": "j",
+            "nombre": "Pie de Limón 10 porciones",
+            "categoria": "postres",
+            "gramos": 8,
+            "precio": 55000,
+            "stock": 10,
+            "descripcion": "La combinación del dulce merengue, las gotas cítricas del limón y la crocancia de nuestra galleta da como resultado el contraste perfecto.",
+            "imagen": "./images/pieDeLimon.jpg",
+            "sabores": []
+        },
+        {
+            "id": "k",
+            "nombre": "Cheesecake Fresa o Frutos Rojos 12 porciones",
+            "categoria": "postres",
+            "gramos": 12,
+            "precio": 75000,
+            "stock": 10,
+            "descripcion": "De la cocina inspiradora de Lu sale el gusto de brindar felicidad en forma de cheesecake. Su técnica es mezclar amor, hornear con pasión y entregar el corazón en cada porción.",
+            "imagen": "./images/cheesecake.jpg",
+            "sabores": ["Frutos rojos", "Fresa"]
+        }                                                       
     ]
 }

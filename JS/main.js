@@ -108,19 +108,6 @@ let menu = () => {
     return seleccion
 }
 
-let agregarAlCarrito = () => {
-    let seleccion=menu()
-    let cantidad = prompt(`El valor unitario de ${listaProductos[seleccion].nombre} es de ${listaProductos[seleccion].precio} pesos. Ingresa la cantidad que deseas añadir al carrito`)
-    const subTotalProducto = listaProductos[seleccion].precio * cantidad;
-    bodegadeProductos.push({producto:listaProductos[seleccion].nombre, cantidad, subTotalProducto});
-    if (confirm`¡Añadido exitosamente! Deseas agregar otro producto?` === true){
-        agregarAlCarrito();
-    } else {
-        alert(`Puedes verificar los productos que añadiste al carrito a través de la consola. Sí no añadiste ningún producto, omite este mensaje.`)
-    }
-}
-
-
 const buscarProducto = (producto, array) => {
     let filtro = array.filter(el => el.nombre.toLowerCase().includes(producto.toLowerCase()))
     return filtro;
@@ -207,7 +194,6 @@ const filtroDeProductos = ()=>{
 }
 
 
-
 const antojos = () => {
     listaDeAntojos.map(el => {
         categoriaAntojos.insertAdjacentHTML('beforeend', 
@@ -241,7 +227,7 @@ const dibujarCarrito = () => {
     <div class="producto__info">
         <div class="producto__container__separador">
             <h2 class="producto__nombre">${el.producto.nombre}</h2>
-            <span>${el.sabor}</span>
+            <span class="producto__sabor">${el.sabor}</span>
             <a href="#" class="producto__eliminar trashIconSize" eliminar="${el.producto.id}">
                 <i class="fa-regular fa-trash-can "></i></a>
 
@@ -268,7 +254,6 @@ const dibujarCarrito = () => {
     })
 }
 
-
 //event listeners
 
 const seleccionarSabor = (e) =>{
@@ -294,7 +279,8 @@ let eliminarDelCanasto = e => {
         position: "center", // `left`, `center` or `right`
         stopOnFocus: true, // Prevents dismissing of toast on hover
         style: {
-          background: "linear-gradient(to right, #00b09b, #96c93d)",
+            background: "#996ad0"
+        //   background: "linear-gradient(to right, #00b09b, #96c93d)",
         }
       }).showToast();
       
@@ -339,6 +325,7 @@ const iniciar = async () =>{
     mostrarTortas.onclick = ()=> {
         mostrarPostres.style = ''
         filtros.categoria = 'tortas';
+        mostrarTortas.style = 'border-bottom: solid 3px #996ad0;'
         return filtroDeProductos()
     };
     

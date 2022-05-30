@@ -5,9 +5,10 @@
   
 }
 
-body {
+html, body {
   font-family: "Montserrat", sans-serif;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 .pesado {
@@ -116,12 +117,12 @@ background-size: contain;
 width: 930px;
 position: absolute;
 left: calc(50% - 510px);
-top: -40px;
+top: -45px;
 height: 59px;
 z-index: 1;
 }
 
-/* Cart */
+/* Cart sidebar */
 
 .cart {
   position: fixed;
@@ -185,6 +186,12 @@ z-index: 1;
   font-size: 0.8rem;
 }
 
+.producto__sabor{
+  font-size: 0.8rem;
+  color: rgb(59, 59, 59);
+  font-weight: 300;
+}
+
 .producto__precio {
   align-self: flex-end;
   font-size: 0.8rem;
@@ -233,6 +240,7 @@ z-index: 1;
 .total {
   display: flex;
   justify-content: flex-end;
+  margin-top: 15px;
 }
 
 .total__title{
@@ -252,11 +260,15 @@ font-size: 0.8rem;
   padding: 12px 20px;
   border: none;
   border-radius: 3px;
-  background-color: #a93012;
+  background-color: #996ad0;
   color: #fff;
   font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
+}
+
+.btn__buy:hover{
+  background-color: #7852a4;
 }
 
 .cart__scroller{
@@ -264,14 +276,25 @@ font-size: 0.8rem;
   max-height: calc(100vh - 200px);
 }
 
-/* Footer */
+.custom-shape-divider-top-1653885889 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 126px;
+  transform: rotateY(180deg);
+}
 
-footer {
-  background-color: #ebe6ff;
-  height: 100px;
+.custom-shape-divider-top-1653885889 .shape-fill {
+  fill: #FFFFFF;
 }
 
 /* Bloque de filtros (Por categoria) */
+
+.categorias__parrafo{
+  text-align: center;
+  margin-top: 15px;
+  color: rgb(59, 59, 59);
+}
 
 .categorias__selector ul {
   display: flex;
@@ -405,6 +428,17 @@ margin: 50px 0;
   font-weight: 600;
 }
 
+.select__btn{
+  display: block;
+  margin: 0 auto;
+  border-radius: 3px;
+  background-color: #ffffff;
+  height: 20px;
+  width: 100px;
+  color: #8d5cc8;
+  border-color: #8d5cc8;
+}
+
 .categoria__btn {
   margin: 10px auto;
   display: block;
@@ -416,6 +450,10 @@ margin: 50px 0;
   font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
+}
+
+.categoria__btn:hover{
+  background-color: #7852a4;
 }
 
 .categoria__breadcrumb{
@@ -453,15 +491,15 @@ margin: 50px 0;
 }
 
 .categoria__tarjeta__antojos {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 250px;
-  height: 350px;
-  background-color: #ddc7ff;
-  border-radius: 10px;
-  box-shadow: 0px 5px 10px 0px rgb(0 0 0 / 15%);
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+width: 250px;
+height: 350px;
+background-color: #ddc7ff;
+border-radius: 10px;
+box-shadow: 0px 5px 10px 0px rgb(0 0 0 / 15%);
 }
 
 .categoria__tarjeta__antojos img {
@@ -471,22 +509,22 @@ padding-bottom: 10px;
 }
 
 .categoria__tarjeta__antojos h3 {
+font-size: 0.8rem;
+margin-top: 10px;
+}
+
+.categoria__tarjeta__antojos p {
   font-size: 0.8rem;
-  margin-top: 10px;
-  }
+}
 
-  .categoria__tarjeta__antojos p {
-    font-size: 0.8rem;
-  }
-
-  .categoria__tarjeta__antojos p:last-of-type{
-    font-size: 0.9rem;
-    padding: 10px;
-    color: #2e2526;
-    text-align: center;
-    text-transform: uppercase;
-    font-weight: 600;
-  }
+.categoria__tarjeta__antojos p:last-of-type{
+  font-size: 0.9rem;
+  padding: 10px;
+  color: #2e2526;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 600;
+}
 
 /* Seccion nosotros */
 
@@ -496,6 +534,37 @@ padding-bottom: 10px;
   justify-content: center;
   align-items: center;
   margin: 100px 0px;
+}
+
+.nosotros__descripcion{
+  font-size:  0.9rem;
+  color: #9b9697;
+  padding: 10px 150px;
+  margin-top: 15px;
+  
+}
+
+.nosotros__fotos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 50px;
+}
+
+.nosotros__left{
+  display: flex;
+  justify-content: end;
+  margin-right: 15px;
+}
+
+.nosotros__left img {
+  height: 515px;
+    width: auto;
+}
+
+
+.fotoCarrito2{
+  margin-bottom: 10px;
+
 }
 
 .nosotros__beneficios {
@@ -545,3 +614,88 @@ padding-bottom: 10px;
   font-weight: 300;
   font-size: 0.8rem;
 }
+
+/* Footer */
+
+footer {
+  position: relative;
+  background-color: #ebe6ff;
+  height: 350px;
+}
+
+.custom-shape-divider-top-1653885889 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  pointer-events: none
+}
+
+.grid__footer{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.footer__socialMedia{
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+.socialmedia__icons {
+  margin: 10px;
+  font-size: 1.4rem;
+}
+
+.footer__contact{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.footer__contact h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.footer__contact form {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__contact form input {
+ margin: 8px 0;
+}
+
+.footer__contact form textarea {
+  margin: 8px 0 0 0;
+  font-family: "Montserrat", sans-serif;
+ }
+
+.contact__btn {
+  margin: 10px auto;
+  display: block;
+  padding: 5px 20px 5px 20px;
+  border: none;
+  border-radius: 3px;
+  background-color: #996ad0;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.contact__btn:hover{
+  background-color: #7852a4;
+}
+
+ .footer__cell__email{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ }

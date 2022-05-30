@@ -15,18 +15,18 @@
 <body>
         <header>
             <nav>
-            <a href="#">
+            <a href="#home">
                 <img src="./images/LOGO LUW.svg" height="65px;" width="65px" alt="Lu Postres+Tortas"> 
             </a>
             <ul>
                     <li>
-                        <a href="#">Tienda</a>
+                        <a href="#tienda">Tienda</a>
                     </li>
                     <li>
-                        <a href="#">Nosotros</a>
+                        <a href="#nosotros">Nosotros</a>
                     </li>
                     <li>
-                        <a href="#">Contacto</a>
+                        <a href="#contacto">Contacto</a>
                     </li>
                     <li>
                         <a href ="#" id="btnToggle"
@@ -36,7 +36,7 @@
                 </ul>
             
             </nav>
-            <section class="banner-principal">
+            <section id="home" class="banner-principal">
                 <h1> Saborea el momento<br> con un premio</h1>
                 <div class="custom-shape-divider-bottom-1648959545">
                     <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -48,50 +48,6 @@
             <nav class="cart" id="cart">
                 <h2 class="cart__title">Tu canasta</h2>
                 <div class="cart__scroller" id="cartList"></div>
-                <!--
-                    <div class="producto">
-                        <div class="producto__imagen">
-                        <img src="./images/Torta.jpg" height="100px;" width="autopx" alt="Torta de fresa">
-                        </div>
-                        <div class="producto__info">
-                            <div class="producto__container__separador">
-                                <h2 class="producto__nombre">Blueberry & Yogurt Pound Cake</h2>
-                                <a href="#" class="producto__eliminar trashIconSize">
-                                    <i class="fa-regular fa-trash-can "></i></a>
-
-                            </div>
-                            <div class="producto__personalizacion">
-                                <label for="cantidad">Cantidad</label>
-                                <input type="number" min="0" class="producto__cantidad" id="cantidad">
-                            </div>
-                            <p class="producto__precio">$13.500</p>
-                        </div>
-                        
-                    </div>
-                    <div class="producto">
-                        <div class="producto__imagen">
-                        <img src="./images/Torta.jpg" height="100px;" width="autopx" alt="Torta de fresa">
-                        </div>
-                        <div class="producto__info">
-                            <div class="producto__container__separador">
-                                <h2 class="producto__nombre">Brownie Melcochudos</h2>
-                                <a href="#" class="producto__eliminar trashIconSize">
-                                    <i class="fa-regular fa-trash-can "></i></a>
-                            </div>
-                            <div class="producto__personalizacion">
-                                <label for="">Cantidad</label>
-                                <input type="number" min="0" class="producto__cantidad" id="">
-                                <select name="sabor" id="">
-                                    <option value="sabor">Sabor</option>
-                                    <option value="chocolate">Chocolate</option>
-                                    <option value="fresa">Fresa</option>
-                                    <option value="vainilla">Vainilla</option>
-                                </select>
-                            </div>
-                            <p class="producto__precio">$22.500</p>
-                        </div>
-                        
-                    </div> !-->
                   
                     
                     <div class="total">
@@ -107,8 +63,9 @@
             
         </header>
         <main>
-            <section class="categorias">
+            <section id="tienda" class="categorias">
                 <h2 class="categoria__titulo">Productos</h2>
+                <p class="categorias__parrafo">Selecciona un producto de nuestras dos categorías:</p>
                 <div class="categorias__selector ">
                     <ul>
                         <li>
@@ -142,12 +99,7 @@
                 <section class="categoria__grid">
     
                     </section>
-                    <ul class="categoria__breadcrumb">
-                        <li class="categoria__border"><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                    
-                    </ul>
+                   
                 
                 <div class="imgLateral1">
                     <img src="./images/lateral1.png" alt="Torta de banano">
@@ -165,8 +117,20 @@
                 </section>   
                 
             </div>
-            <section class="nosotros">
-                <h2 class="categoria__titulo">Nuestro proceso</h2>
+            <section id="nosotros" class="nosotros">
+                <h2 class="categoria__titulo">Sobre Nosotros</h2>
+                <p class="nosotros__descripcion">Lu Postres + Tortas lleva 4 años atendiendo los ciudadanos de Cali con una propuesta sobre ruedas que hace presencia en los parques, clínicas y sitios emblemáticos de la ciudad. 
+                Contamos con una amplia oferta de postres y tortas elaborados de forma casera siempre teniendo como prioridad la selección de los mejores ingredientes. </p>
+                <div class="nosotros__fotos">
+                    <div class="nosotros__left">
+                        <img src="./images/carrito1.jpg" alt="Carrito de Lu">
+                    </div>
+                    <div class="nosotros__right">
+                        <img class="fotoCarrito2" src="./images/carrito2.jpg" alt="Carrito de Lu">
+                        <img src="./images/producto.jpg" alt="Tortas de varios sabores">
+                    </div>
+                </div>
+                <h2 class="categoria__titulo">Nuestro Proceso</h2>
                 <div class="nosotros__flex">
                     <div class="nosotros__beneficios">
                         <i class="fa-solid fa-bowl-hot"></i>
@@ -187,17 +151,17 @@
 
             </section>
             <section class="nosotros">
-                <h2 class="categoria__titulo">Encuentranos en Cali</h2>
+                <h2 class="categoria__titulo">Encuéntranos en Cali</h2>
                 <div class="encuentranos__flex">
                     <span class="dottedLine"></span>
                     <div class="encuentranos__beneficios">
                         <i class="fa-solid fa-circle-1"></i>
-                        <h3 class="encuentranos__titulo">Parque del ingenio</h3>
+                        <h3 class="encuentranos__titulo">Parque del Ingenio</h3>
                         <p>tiempos de cocción perfectos para garantizar las texturas, sabores y formas que anhelas.</p>
                     </div>
                     <div class="encuentranos__beneficios">
                         <i class="fa-solid fa-circle-2"></i>
-                        <h3 class="encuentranos__titulo">Clinica Imbanaco</h3>
+                        <h3 class="encuentranos__titulo">Clínica Imbanaco</h3>
                         <p>Nos esmeramos por adquirir ingredients frescos y de excelente calidad.</p>
                     </div>
                     <div class="encuentranos__beneficios">
@@ -214,7 +178,40 @@
 
             </section>
         </main>
-        <footer>
+        <footer class="grid__footer">
+            <div class="custom-shape-divider-top-1653885889 shape-fill">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+                </svg>
+            </div>
+            </div>
+                <div class="footer__socialMedia">
+                    <div>
+                        <a href="#home">
+                            <img src="./images/LOGO LUB.svg" height="80px;" width="80px" alt="Lu Postres+Tortas"> 
+                        </a>
+                    </div>
+                    <div>
+                        <i class="fa-brands fa-facebook socialmedia__icons"></i>
+                        <i class="fa-brands fa-instagram socialmedia__icons"></i>
+                        <i class="fa-brands fa-twitter socialmedia__icons "></i>
+                    </div>
+                </div>
+                <div class="footer__contact">
+                    <h2 id="contacto">Contáctanos</h2>
+                    <form action="">
+                        <input type="text" name="nombre" id="" placeholder="Nombre">
+                        <input type="email" name="correo" id="" placeholder="Correo">
+                        <textarea name="mensaje" id="" cols="30" rows="5" placeholder="Mensaje"></textarea>
+                        <button type="submit" class="contact__btn">Enviar</button>
+                    </form>
+                </div>
+                <div class="footer__cell__email">
+                    <h2>Llámanos</h2>
+                    <p>300-230-92-50</p>
+                    <h2>Escríbenos</h2>
+                    <p>holdinglu@gmail.com</p>
+                </div>
         </footer>
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
         <script src="./JS/main.js"></script>

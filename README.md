@@ -11,7 +11,7 @@ The website has a minimalistic design with a white background and different shad
 
 4.	Technologies:
   •	The website was built using HTML, CSS and JavaScript. The project has no backend because it was developed for educational purposes. 
-  •	The website will be tested on multiple browsers and devices to ensure that it works properly and is accessible to all users
+  •	The website has not been tested on multiple browsers and devices to ensure that it works properly and is accessible to all users so bear with me.
 
 5.	Maintenance and Support:
   •	The website will be maintained and supported by the development team to ensure that it remains functional and up-to-date

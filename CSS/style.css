@@ -557,8 +557,9 @@ margin-top: 10px;
 }
 
 .nosotros__left img {
-  height: 515px;
+  /* height: 515px; */
     width: auto;
+  height: 100%;
 }
 
 
@@ -570,7 +571,7 @@ margin-top: 10px;
 }
 
 .nosotros__right img {
-  width: 100%;
+  width: 48%;
 }
 
 
